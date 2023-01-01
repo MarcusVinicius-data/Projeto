@@ -1,68 +1,42 @@
-# class Car:
-#    def __init__(self, name) -> None:
-#        self.name = name
-        
-#    def SpeedUp(self):
-#        print(f'{self.name} está acelerando...')
-        
-#fusca = Car('Fusca')
-#print(fusca.name)
-#fusca.SpeedUp()  
-
-#celta = Car('Celta')
-#print(celta.name)
-#celta.SpeedUp() 
-
 class Camera:
-    def __init__(self, name, shooting=False) -> None:
+    def __init__(self, name, filming=False) -> None:
         self.name = name
-        self.shooting = shooting
+        self.filming = filming
         
-    def Film(self) -> None:
-        print(f'{self.name} já está filmando...') # imprime na tela oque a camera está faznedo
-        return # return para parar a ação  
-    
-        print(f'{self.name} , está filmando')
-        shooting = True 
-    
-       # execução de parada
-       
+    def Filming(self):
+        if self.filming:
+            print(f'{self.name} start filming')
+            return
+        print(f'{self.name} keep filming')
+        self.filming = True
+        
     def StopFilming(self):
-        if not self.shooting:
-            print(f'{self.name} NÃO está filmando...')
+        if not self.filming:
+            print(f'{self.name} stopping filming') 
             return
-
-        print(f'{self.name} está parando de filmar...')
-        self.shooting = False
-
-    def Photograph(self):
-        if self.shooting:
-            print(f'{self.name} não pode fotografar filmando')
+        
+        print(f'{self.name} stopped filming')
+        self.filming = False
+        
+    def StartPhotographic(self):
+        if self.filming:
+            print(f"{self.name} can't shoot, it's taking a picture, please switch to photo mode")
             return
+        print(f'{self.name} is photographing')       
+            
 
-        print(f'{self.name} está fotografando...')
-    
- 
- 
-    
-cam1 = Camera('Canon')
-cam2 = Camera('kodak')
-cam3 = Camera('Sony')             
-  
-cam1.Film()
-cam1.StopFilming()
-cam1.Photograph()
-cam1.Photograph()
+cam1 = Camera('Sony')
+cam2 = Camera('Tecpix')
+cam3 = Camera('Cannon 800')
 
-print()
-
-cam2.Film()
+cam1.StartPhotographic()
+cam2.Filming()
+cam3.StartPhotographic()
+cam2.StartPhotographic()
+cam1.Filming()
+cam3.Filming()
 cam2.StopFilming()
-cam2.Photograph()
-cam2.Film()
-
+cam2.StartPhotographic()
 print()
-
-cam3.Film()
-cam3.StopFilming()
-cam3.Photograph() 
+cam2.StopFilming()
+cam2.StartPhotographic()
