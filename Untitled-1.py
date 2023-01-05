@@ -19,8 +19,6 @@ class Connection:
         return connection
     
 c1 = Connection.create_whit_auth('Marcus', '1234')
-#c1.set_user("Marcus")
-#c1.set_password('123')
 print(c1.user)
 print(c1.password)
 
