@@ -1,0 +1,7 @@
+include
+lib
+Scripts
+POO python.code-workspace
+3.11
+.vscode
+.mypy_cache
